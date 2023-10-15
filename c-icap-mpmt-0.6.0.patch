@@ -1,0 +1,22 @@
+diff --git a/mpmt_server.c b/mpmt_server.c
+index 9dedbbb..84d805b 100644
+--- a/mpmt_server.c
++++ b/mpmt_server.c
+@@ -1128,6 +1128,9 @@ int initialize_server_objs()
+     return ctl_socket;
+ }
+ 
++extern void icap_stats_process(void);
++
++
+ int start_server()
+ {
+     int child_indx, pid, i, ctl_socket;
+@@ -1147,6 +1150,7 @@ int start_server()
+     }
+     if (pid != 0) {
+         main_signals();
++        icap_stats_process();
+ 
+         execute_commands_no_lock(CI_CMD_MONITOR_START);
+         while (1) {

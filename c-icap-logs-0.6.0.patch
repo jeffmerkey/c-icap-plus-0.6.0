@@ -1,0 +1,22 @@
+diff --git a/c-icap.conf.in b/c-icap.conf.in
+index 9726000..088a90d 100644
+--- a/c-icap.conf.in
++++ b/c-icap.conf.in
+@@ -704,7 +704,7 @@ RemoteProxyUserHeaderEncoded on
+ #	information about the c-icap server.
+ # Default:
+ #	ServerLog @prefix@/var/log/server.log
+-ServerLog @prefix@/var/log/server.log
++ServerLog /var/log/c-icap/server.log
+ 
+ # TAG: AccessLog
+ # Format: AccessLog LogFile [LogFormat] [[!]acl1] [[!]acl2] [...]
+@@ -719,7 +719,7 @@ ServerLog @prefix@/var/log/server.log
+ #	AccessLog @prefix@/var/log/access.log
+ # Example:
+ #	AccessLog @prefix@/var/log/access.log MyFormat all
+-AccessLog @prefix@/var/log/access.log
++AccessLog /var/log/c-icap/access.log
+ 
+ # TAG: Logger
+ # Format: Logger LoggerName ...
